@@ -15,7 +15,6 @@ var athleteSchema = new Schema({
         location : { type: String,
                     required: true},
         association : { type: String,
-                      enum: ['NBA', 'NFL'],
                       required: true},
         team : { type: String,
                 required: true},
