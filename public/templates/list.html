@@ -1,0 +1,42 @@
+<div id="todoPanel" class="panel">
+    <h3 class="panel-header">List of Athletes </h3>
+    <table class="table table-striped table-bordered">
+        <thead>
+        <tr>
+          <th>No</th>
+            <th>Name</th>
+            <!-- <th>Date of Birth</th> -->
+            <th>Gender</th>
+            <th>Association</th>
+            <th>Nationality</th>
+            <th>Location</th>
+            <th>Team</th>
+            <th>Interests</th>
+            <th>Charities</th>
+            <th>Pets</th>
+            <th>Drinking Alcohol</th>
+            <th>Married</th>
+            <th>Social Media handles</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr ng-repeat="item in athletes">
+            <td>{{$index+1}}</td>
+            <td>{{item.basic_info.name}}</td>
+            <!-- <td>{{item.basic_info.dob}}</td> -->
+            <td>{{item.basic_info.gender}}</td>
+            <td>{{item.basic_info.association}}</td>
+            <td>{{item.basic_info.nationality}}</td>
+            <td>{{item.basic_info.location}}</td>
+            <td>{{item.basic_info.team}}</td>
+            <td>{{item.about.interests}}</td>
+            <td>{{item.about.charities}}</td>
+            <td>{{item.about.pets}}</td>
+            <td>{{item.about.drinks_alcohol}}</td>
+            <td>{{item.about.married}}</td>
+            <td>{{item.social_media_handles}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

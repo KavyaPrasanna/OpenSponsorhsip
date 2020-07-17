@@ -1,0 +1,83 @@
+<div class="container">
+    <h3 class="panel-header">Basic Info </h3>
+
+    <form>
+  <div class="form-group row">
+    <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" ng-model="info.inputName" placeholder="Name" required>
+    </div>
+  </div>
+  <!-- <div class="form-group row">
+    <label for="inputDob" class="col-sm-2 col-form-label">Date Of Birth</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" ng-model="info.inputDob" placeholder="Date Of Birth">
+    </div>
+  </div> -->
+  <div class="form-group row">
+    <label for="inputDob" class="col-sm-2 col-form-label">Gender</label>
+    <div class="col-sm-10">
+      <label class="radio-inline">
+      <input type="radio" ng-model = "gender" ng-change="RadioChange('male')" name="gender" ng-value="male">Male
+    </label>
+    <label class="radio-inline">
+      <input type="radio" ng-model = "gender" ng-change="RadioChange('female')"name="gender" ng-value="female">Female
+    </label>
+    <label class="radio-inline">
+      <input type="radio" ng-model = "gender" ng-change="RadioChange('prefer_not_to_say')" name="gender" ng-value="prefer_not_to_say">Prefer not to say
+    </label>
+ </div>
+</div>
+  <div class="form-group row">
+    <label for="inputAssociation" class="col-sm-2 col-form-label">Association</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" ng-model="info.inputAssociation" placeholder="Association">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputNationality" class="col-sm-2 col-form-label">Nationality</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" ng-model="info.inputNationality" placeholder="Nationality">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputLocation" class="col-sm-2 col-form-label">Location</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" ng-model="info.inputLocation" placeholder="Location">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputTeam" class="col-sm-2 col-form-label">Team</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" ng-model="info.inputTeam" placeholder="Team" required>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputTeam" class="col-sm-2 col-form-label" required>Sports</label>
+    <div class="col-sm-10">
+  <select class="form-control custom-select" ng-model="inputSports">
+    <option selected>Select sports</option>
+    <option value="Golf">Golf</option>
+    <option value="Tennis">Tennis</option>
+    <option value="Cricket">Cricket</option>
+    <option value="Basketball">Basketball</option>
+    <option value="Baseball">Baseball</option>
+    <option value="American Football">American Football</option>
+    <option value="Aquatics">Aquatics</option>
+    <option value="Archery">Archery</option>
+    <option value="Automobile Racing">Automobile Racing</option>
+    <option value="Badminton">Badminton</option>
+    <option value="Beach Volleyball">Beach Volleyball</option>
+    <option value="Bobsleigh">Bobsleigh</option>
+    <option value="Body Building">Body Building</option>
+    <option value="Boxing">Boxing</option>
+    <option value="Cross Country Running">Cross Country Running</option>
+    <option value="Cross Country Skiing">Cross Country Skiing</option>
+  </select>
+</div>
+</div>
+<ul class="pager">
+<li ng-click = "save()"><a href="#!/about">Next</a></li>
+</ul>
+</form>
+</div>
