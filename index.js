@@ -11,9 +11,6 @@ app.use(express.static(__dirname + '/public'));
 
 app.use(function (req, res, next) {
 
-
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:63342');
-
     res.setHeader('Access-Control-Allow-Methods', 'GET, HEAD, POST, OPTIONS, PUT, PATCH, DELETE');
 
     res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With,content-type, Content-Type, Accept, Authorization');

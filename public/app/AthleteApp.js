@@ -12,7 +12,7 @@ controllersApp.service('dataService', function($http) {
     this.getData = function() {
         return $http({
             method: 'GET',
-            url: 'http://localhost:3002/profiles'
+            url: 'https://opensponsorship-challenge.herokuapp.com/profiles'
         });
     }
 });
@@ -55,7 +55,7 @@ controllersApp.controller('MainCtrl', function($scope, $http, $rootScope) {
       console.log(data);
       return $http({
           method: 'POST',
-          url: 'http://localhost:3002/profile',
+          url: 'https://opensponsorship-challenge.herokuapp.com/profile',
           data: {
             "basic_info": {
               "name": data[0].inputName,
@@ -78,7 +78,7 @@ controllersApp.controller('MainCtrl', function($scope, $http, $rootScope) {
           }
           }).then(function(response) {
               console.log("Success response "+JSON.stringify(response));
-          }).catch(function(err) { 
+          }).catch(function(err) {
               console.log("Failure response "+JSON.stringify(err));
           });
     }
