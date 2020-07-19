@@ -9,12 +9,6 @@ controllersApp.controller('basicInfoController',function($scope, dataService){
   });
 })
 
-app.filter('capitalize', function() {
-    return function(input) {
-      return (angular.isString(input) && input.length > 0) ? input.charAt(0).toUpperCase() + input.substr(1).toLowerCase() : input;
-    }
-});
-
 controllersApp.service('dataService', function($http) {
     this.getData = function() {
         return $http({

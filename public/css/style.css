@@ -6,3 +6,6 @@
 .alignment {
   align-self: center;
 }
+.capitalize {
+   text-transform: capitalize;
+}
