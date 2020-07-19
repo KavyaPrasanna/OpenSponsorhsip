@@ -81,10 +81,10 @@ var athleteSchema = new Schema({
     pets : { type: String,
                   required: false},
     drinks_alcohol : { type: String,
-                  enum : ['yes', 'no'],
+                  enum : ['Yes', 'No'],
                   required: true},
     married : { type: String,
-                  enum : ['yes', 'no'],
+                  enum : ['Yes', 'No'],
                   required: true}
   },
 

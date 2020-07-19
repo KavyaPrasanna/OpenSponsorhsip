@@ -79,8 +79,6 @@ app.post('/profile',(req, res) => {
 app.put('/profile/:athlete_id',(req, res) => {
   console.log(JSON.stringify(req.params.athlete_id));
   var obj = req.body;
-  //{ "basic_info.nationality" : 'Ameri'}
-  //{ basic_info: { nationality: 'Canadian' } }
   athlete.findOneAndUpdate({'basic_info.athlete_id': req.params.athlete_id},{$set:  obj},(err, resp)  =>{
     if(err) {
       console.error("Error "+err);

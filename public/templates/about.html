@@ -30,10 +30,10 @@
       <label for="da" class="col-sm-2 col-form-label required">Drinking Alcohol</label>
       <div class="col-sm-10">
         <label class="radio-inline">
-          <input type="radio" ng-model = "da" ng-change="RadioDA('yes')" name="da" value="yes" ng-required="!da">Yes
+          <input type="radio" ng-model = "da" ng-change="RadioDA('Yes')" name="da" value="Yes" ng-required="!da">Yes
         </label>
         <label class="radio-inline">
-          <input type="radio" ng-model = "da" ng-change="RadioDA('no')" name="da" value="no" ng-required="!da">No
+          <input type="radio" ng-model = "da" ng-change="RadioDA('No')" name="da" value="No" ng-required="!da">No
         </label>
         <span style="color:red" class="help-inline" ng-show="submitted && frm.da.$error.required">Please choose 'Yes' or "No" </span>
       </div>
@@ -42,10 +42,10 @@
       <label for="married" class="col-sm-2 col-form-label required">Married</label>
       <div class="col-sm-10">
         <label class="radio-inline">
-          <input type="radio" ng-model = "married" ng-change="RadioMarried('yes')" name="married" value="yes" ng-required="!married">Yes
+          <input type="radio" ng-model = "married" ng-change="RadioMarried('Yes')" name="married" value="Yes" ng-required="!married">Yes
         </label>
         <label class="radio-inline">
-          <input type="radio" ng-model = "married" ng-change="RadioMarried('no')"name="married" value="no" ng-required="!married">No
+          <input type="radio" ng-model = "married" ng-change="RadioMarried('No')"name="married" value="No" ng-required="!married">No
         </label>
         <span style="color:red" class="help-inline" ng-show="submitted && frm.married.$error.required">Please choose 'Yes' or "No" </span>
      </div>
