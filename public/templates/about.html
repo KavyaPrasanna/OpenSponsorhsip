@@ -1,68 +1,81 @@
 <div class="container">
     <h3 class="panel-header">About </h3>
 
-    <form>
-  <div class="form-group row">
-    <label for="inputInterests" class="col-sm-2 col-form-label">Interests</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" ng-model="info.inputInterests" placeholder="Interests">
+    <form name="frm" novalidate>
+      <div class="form-group row">
+        <label for="inputInterests" class="col-sm-2 col-form-label required">Interests</label>
+      <div class="col-sm-10">
+        <input type="text" name ="inputInterests" class="form-control" ng-model="info.inputInterests" placeholder="Interests" required>
+        <span style="color:red" class="help-inline" ng-show="submitted && frm.inputInterests.$error.required">Please enter the interests </span>
+      </div>
+     </div>
+
+  <!-- non-mandatory field -->
+     <div class="form-group row">
+       <label for="inputCharities" class="col-sm-2 col-form-label">Charities</label>
+       <div class="col-sm-10">
+         <input type="text" class="form-control" ng-model="info.inputCharities" placeholder="Charities">
+       </div>
+     </div>
+
+  <!-- non-mandatory field -->
+    <div class="form-group row">
+      <label for="inputPets" class="col-sm-2 col-form-label">Pets</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" ng-model="info.inputPets" placeholder="Pets">
+      </div>
     </div>
-  </div>
-  <div class="form-group row">
-    <label for="inputCharities" class="col-sm-2 col-form-label">Charities</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" ng-model="info.inputCharities" placeholder="Charities">
+
+    <div class="form-group row">
+      <label for="da" class="col-sm-2 col-form-label required">Drinking Alcohol</label>
+      <div class="col-sm-10">
+        <label class="radio-inline">
+          <input type="radio" ng-model = "da" ng-change="RadioDA('yes')" name="da" value="yes" ng-required="!da">Yes
+        </label>
+        <label class="radio-inline">
+          <input type="radio" ng-model = "da" ng-change="RadioDA('no')" name="da" value="no" ng-required="!da">No
+        </label>
+        <span style="color:red" class="help-inline" ng-show="submitted && frm.da.$error.required">Please choose 'Yes' or "No" </span>
+      </div>
     </div>
-  </div>
+    <div class="form-group row">
+      <label for="married" class="col-sm-2 col-form-label required">Married</label>
+      <div class="col-sm-10">
+        <label class="radio-inline">
+          <input type="radio" ng-model = "married" ng-change="RadioMarried('yes')" name="married" value="yes" ng-required="!married">Yes
+        </label>
+        <label class="radio-inline">
+          <input type="radio" ng-model = "married" ng-change="RadioMarried('no')"name="married" value="no" ng-required="!married">No
+        </label>
+        <span style="color:red" class="help-inline" ng-show="submitted && frm.married.$error.required">Please choose 'Yes' or "No" </span>
+     </div>
+   </div>
 
   <div class="form-group row">
-    <label for="inputPets" class="col-sm-2 col-form-label">Pets</label>
+    <label for="social" class="col-sm-2 col-form-label required">Social Media Handles</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" ng-model="info.inputPets" placeholder="Pets">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="inputDob" class="col-sm-2 col-form-label">Drinking Alcohol</label>
-    <div class="col-sm-10">
-      <label class="radio-inline">
-      <input type="radio" ng-model = "da" ng-change="RadioDA('yes')" name="da" ng-value="yes">Yes
-    </label>
-    <label class="radio-inline">
-      <input type="radio" ng-model = "da" ng-change="RadioDA('no')"name="da" ng-value="no">No
-    </label>
+      <select class="form-control custom-select" name ="social" ng-model="info.social" placeholder="Select the Social Media Handle" required>
+        <option value="" disabled>Select your option</option>
+        <option value="Facebook">Facebook</option>
+        <option value="Twitter">Twitter</option>
+        <option value="Instagram">Instagram</option>
+        <option value="Youtube">Youtube</option>
+        <option value="Twitch">Twitch</option>
+        <option value="Snapchat">Snapchat</option>
+      </select>
+      <span style="color:red" class="help-inline" ng-show="submitted && frm.social.$error.required">Please choose the Social Media Handle </span>
     </div>
  </div>
-  <div class="form-group row">
-    <label for="inputDob" class="col-sm-2 col-form-label">Married</label>
-    <div class="col-sm-10">
-      <label class="radio-inline">
-      <input type="radio" ng-model = "married" ng-change="RadioMarried('yes')" name="married" ng-value="yes">Yes
-    </label>
-    <label class="radio-inline">
-      <input type="radio" ng-model = "married" ng-change="RadioMarried('no')"name="married" ng-value="no">No
-    </label>
-    </div>
- </div>
-
-  <div class="form-group row">
-    <label for="inputTeam" class="col-sm-2 col-form-label">Social Media Handles</label>
-    <div class="col-sm-10">
-  <select class="form-control custom-select" ng-model="inputSMH">
-    <option selected>Select the Social media handles</option>
-    <option value="Facebook">Facebook</option>
-    <option value="Twitter">Twitter</option>
-    <option value="Instagram">Instagram</option>
-    <option value="Youtube">Youtube</option>
-    <option value="Twitch">Twitch</option>
-    <option value="Snapchat">Snapchat</option>
-  </select>
+<ul class="pager">
+  <button class="btn btn-success" type="submit" ng-click="submitted=true">Save</button>
+</ul>
+<div class="btn-toolbar pull-right" role="toolbar" aria-label="Toolbar with button groups">
+  <div class="btn-group mr-2" role="group" aria-label="Sec group">
+      <a href="#!/" class="btn btn-primary" role="button" ng-if="frm.$valid">Previous</a>
   </div>
+  <div class="btn-group mr-2" role="group" aria-label="First group">
+      <a href="#!/wrapup" class="btn btn-primary" role="button" ng-click = "save()" ng-if="frm.$valid">Next</a>
   </div>
-  <ul class="pager">
-  <li><a href="#!/">Previous</a></li>
-  </ul>
-  <ul class="pager">
-  <li ng-click="save();submit()"><a href="#!/list">Submit</a></li>
-  </ul>
+</div>
 </form>
 </div>

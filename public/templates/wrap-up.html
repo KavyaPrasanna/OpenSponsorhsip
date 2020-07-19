@@ -1,0 +1,102 @@
+<div class="container" ng-init="getValues()">
+
+  <h3 class="panel-header">Please confirm the details </h3>
+  <h3 class="panel-header">Basic Info
+    <a href="#!/" class="btn btn-info pull-right" role="button" >Edit</a>
+  </h3>
+  <form>
+    <div class="form-group row">
+      <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+      <div class="col-sm-10">
+        <p type="text">{{enteredData.inputName}}<p>
+      </div>
+    </div>
+<!-- <div class="form-group row">
+  <label for="inputDob" class="col-sm-2 col-form-label">Date Of Birth</label>
+  <div class="col-sm-10">
+    <input type="text" class="form-control" ng-model="info.inputDob" placeholder="Date Of Birth">
+  </div>
+</div> -->
+  <div class="form-group row">
+    <label for="inputDob" class="col-sm-2 col-form-label">Gender</label>
+    <div class="col-sm-10">
+      <p type="text">{{enteredData.gender}}<p>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputAssociation" class="col-sm-2 col-form-label">Association</label>
+    <div class="col-sm-10">
+      <p type="text">{{enteredData.inputAssociation}}<p>
+      </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputNationality" class="col-sm-2 col-form-label">Nationality</label>
+    <div class="col-sm-10">
+      <p type="text">{{enteredData.inputNationality}}<p>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputLocation" class="col-sm-2 col-form-label">Location</label>
+    <div class="col-sm-10">
+      <p type="text">{{enteredData.inputLocation}}<p>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputTeam" class="col-sm-2 col-form-label">Team</label>
+    <div class="col-sm-10">
+      <p type="text">{{enteredData.inputTeam}}<p>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputTeam" class="col-sm-2 col-form-label" required>Sports</label>
+    <div class="col-sm-10">
+      <p type="text">{{enteredData.sports}}<p>
+    </div>
+  </div>
+
+  <hr>
+
+  <h3 class="panel-header">About
+    <a href="#!/about" class="btn btn-info pull-right" role="button" >Edit</a>
+  </h3>
+  <div class="form-group row">
+    <label for="inputInterests" class="col-sm-2 col-form-label">Interests</label>
+    <div class="col-sm-10">
+      <p type="text">{{enteredData.inputInterests}}<p>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputCharities" class="col-sm-2 col-form-label">Charities</label>
+    <div class="col-sm-10">
+        <p type="text">{{enteredData.inputCharities}}<p>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputPets" class="col-sm-2 col-form-label">Pets</label>
+    <div class="col-sm-10">
+        <p type="text">{{enteredData.inputPets}}<p>
+      </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputDob" class="col-sm-2 col-form-label">Drinking Alcohol</label>
+    <div class="col-sm-10">
+      <p type="text">{{enteredData.da}}<p>
+    </div>
+  </div>
+  <div class="form-group row">
+     <label for="inputDob" class="col-sm-2 col-form-label">Married</label>
+     <div class="col-sm-10">
+       <p type="text">{{enteredData.married}}<p>
+     </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputTeam" class="col-sm-2 col-form-label">Social Media Handles</label>
+    <div class="col-sm-10">
+      <p type="text">{{enteredData.social}}<p>
+    </div>
+  </div>
+  <ul class="pager">
+    <a href="#!/list" class="btn btn-success" role="button" ng-click = "save();submit()" >Submit</a>
+  </ul>
+  </form>
+</div>

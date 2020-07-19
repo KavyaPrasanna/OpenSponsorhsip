@@ -11,6 +11,10 @@ app.config(function ($routeProvider) {
             templateUrl: 'templates/about.html',
             controller: 'MainCtrl'
         })
+        .when('/wrapup', {
+            templateUrl: 'templates/wrap-up.html',
+            controller: 'WrapUpCtrl'
+        })
         .when('/list', {
             templateUrl: 'templates/list.html',
             controller: 'basicInfoController'

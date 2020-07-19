@@ -1,15 +1,21 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8081;
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const { check, validationResult } = require('express-validator');
 const athlete = require('./Model/athlete');
+const cors = require('cors');
 
+app.use(cors({
+  'origin' : '*'
+}));
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'));
 
 app.use(function (req, res, next) {
+
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:63342');
 
     res.setHeader('Access-Control-Allow-Methods', 'GET, HEAD, POST, OPTIONS, PUT, PATCH, DELETE');
 
@@ -66,6 +72,21 @@ app.post('/profile',(req, res) => {
       console.error(err);
     }else{
       res.status(200).send("Added Successfully!");
+    }
+  })
+})
+
+app.put('/profile/:athlete_id',(req, res) => {
+  console.log(JSON.stringify(req.params.athlete_id));
+  var obj = req.body;
+  //{ "basic_info.nationality" : 'Ameri'}
+  //{ basic_info: { nationality: 'Canadian' } }
+  athlete.findOneAndUpdate({'basic_info.athlete_id': req.params.athlete_id},{$set:  obj},(err, resp)  =>{
+    if(err) {
+      console.error("Error "+err);
+    }else {
+      console.log("update result "+JSON.stringify(resp));
+      res.status(200).json(resp);
     }
   })
 })

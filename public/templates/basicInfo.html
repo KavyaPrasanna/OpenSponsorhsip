@@ -1,11 +1,11 @@
 <div class="container">
     <h3 class="panel-header">Basic Info </h3>
-
-    <form>
+    <form id = "frm" name="frm"  novalidate>
   <div class="form-group row">
-    <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+    <label for="inputName" class="col-sm-2 col-form-label required">Name</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" ng-model="info.inputName" placeholder="Name" required>
+      <input type="text" name ="inputName" class="form-control" ng-model="info.inputName" placeholder="Name" required ng-maxlength="25">
+      <span style="color:red" class="help-inline" ng-show="submitted && frm.inputName.$error.required">Please enter the name </span>
     </div>
   </div>
   <!-- <div class="form-group row">
@@ -15,48 +15,55 @@
     </div>
   </div> -->
   <div class="form-group row">
-    <label for="inputDob" class="col-sm-2 col-form-label">Gender</label>
+    <label for="gender" class="col-sm-2 col-form-label required">Gender</label>
     <div class="col-sm-10">
       <label class="radio-inline">
-      <input type="radio" ng-model = "gender" ng-change="RadioChange('male')" name="gender" ng-value="male">Male
+      <input type="radio" ng-model = "gender" ng-change="RadioChange('Male')" name="gender" value="Male" ng-required="!gender">Male
     </label>
     <label class="radio-inline">
-      <input type="radio" ng-model = "gender" ng-change="RadioChange('female')"name="gender" ng-value="female">Female
+      <input type="radio" ng-model = "gender" ng-change="RadioChange('Female')"name="gender" value="Female" ng-required="!gender">Female
     </label>
     <label class="radio-inline">
-      <input type="radio" ng-model = "gender" ng-change="RadioChange('prefer_not_to_say')" name="gender" ng-value="prefer_not_to_say">Prefer not to say
+      <input type="radio" ng-model = "gender" ng-change="RadioChange('prefer_not_to_say')" name="gender" value="Prefer not to say" ng-required="!gender">Prefer not to say
     </label>
+    <span style="color:red" class="help-inline" ng-show="submitted && frm.gender.$error.required">Please select the gender </span>
  </div>
 </div>
   <div class="form-group row">
-    <label for="inputAssociation" class="col-sm-2 col-form-label">Association</label>
+    <label for="inputAssociation" class="col-sm-2 col-form-label required">Association</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" ng-model="info.inputAssociation" placeholder="Association">
+      <input type="text" name ="inputAssociation" class="form-control" ng-model="info.inputAssociation" placeholder="Association" required>
+      <!-- <span style="color:red" ng-if="frm.inputAssociation.$touched && frm.inputAssociation.$invalid"> Please enter the association </span> -->
+      <span style="color:red" class="help-inline" ng-show="submitted && frm.inputAssociation.$error.required">Please enter the association </span>
     </div>
   </div>
   <div class="form-group row">
-    <label for="inputNationality" class="col-sm-2 col-form-label">Nationality</label>
+    <label for="inputNationality" class="col-sm-2 col-form-label required">Nationality</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" ng-model="info.inputNationality" placeholder="Nationality">
+      <input  type="text"  name ="inputNationality" class="form-control" ng-model="info.inputNationality" placeholder="Nationality" required>
+      <span style="color:red" class="help-inline" ng-show="submitted && frm.inputNationality.$error.required">Please enter the nationality </span>
     </div>
   </div>
   <div class="form-group row">
-    <label for="inputLocation" class="col-sm-2 col-form-label">Location</label>
+    <label for="inputLocation" class="col-sm-2 col-form-label required">Location</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" ng-model="info.inputLocation" placeholder="Location">
+      <input type="text"  name ="inputLocation" class="form-control" ng-model="info.inputLocation" placeholder="Location" required>
+      <span style="color:red" ng-if="frm.inputLocation.$touched && frm.inputLocation.$invalid"> Please enter the location </span>
+            <span style="color:red" class="help-inline" ng-show="submitted && frm.inputLocation.$error.required">Please enter the location </span>
     </div>
   </div>
   <div class="form-group row">
-    <label for="inputTeam" class="col-sm-2 col-form-label">Team</label>
+    <label for="inputTeam" class="col-sm-2 col-form-label required">Team</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" ng-model="info.inputTeam" placeholder="Team" required>
+      <input type="text" name ="inputTeam" class="form-control" ng-model="info.inputTeam" placeholder="Team" required>
+      <span style="color:red" class="help-inline" ng-show="submitted && frm.inputTeam.$error.required">Please enter the team </span>
     </div>
   </div>
   <div class="form-group row">
-    <label for="inputTeam" class="col-sm-2 col-form-label" required>Sports</label>
+    <label for="sports" class="col-sm-2 col-form-label required">Sports</label>
     <div class="col-sm-10">
-  <select class="form-control custom-select" ng-model="inputSports">
-    <option selected>Select sports</option>
+  <select class="form-control custom-select" name ="sports" ng-model="info.sports" required>
+    <option value="" disabled >Select your option</option>
     <option value="Golf">Golf</option>
     <option value="Tennis">Tennis</option>
     <option value="Cricket">Cricket</option>
@@ -73,11 +80,49 @@
     <option value="Boxing">Boxing</option>
     <option value="Cross Country Running">Cross Country Running</option>
     <option value="Cross Country Skiing">Cross Country Skiing</option>
+    <option value="Curling">Curling</option>
+    <option value="Cycling">Cycling</option>
+    <option value="Darts">Darts</option>
+    <option value="Decathlon">Decathlon</option>
+    <option value="Down Hill Skiing">Down Hill Skiing</option>
+    <option value="Equestrianism">Equestrianism</option>
+    <option value="eSports">eSports</option>
+    <option value="Fencing">Fencing</option>
+    <option value="Field Hockey">Field Hockey</option>
+    <option value="Figure Skating">Figure Skating</option>
+    <option value="Gymnastics">Gymnastics</option>
+    <option value="Ice Hockey">Ice Hockey</option>
+    <option value="Martial Arts">Martial Arts</option>
+    <option value="Mixed Martial Arts">Mixed Martial Arts</option>
+    <option value="Modern Pentathlon">Modern Pentathlon</option>
+    <option value="Motorcycle Racing">Motorcycle Racing</option>
+    <option value="Netball">Netball</option>
+    <option value="Polo">Polo</option>
+    <option value="Racquetball">Racquetball</option>
+    <option value="Rowing">Rowing</option>
+    <option value="Rugby">Rugby</option>
+    <option value="Sailing">Sailing</option>
+    <option value="Softball">Softball</option>
+    <option value="Shooting">Shooting</option>
+    <option value="Skateboarding">Skateboarding</option>
+    <option value="Skeet Shooting">Skeet Shooting</option>
+    <option value="Skeleton">Skeleton</option>
+    <option value="Snow Boarding">Snow Boarding</option>
+    <option value="Soccer (Football)">Soccer (Football)</option>
+    <option value="Squash">Squash</option>
+    <option value="Surfing">Surfing</option>
+    <option value="Swimming">Swimming</option>
+    <option value="Track and Field">Track and Field</option>
+
   </select>
+  <span style="color:red" ng-if="frm.sports.$touched && frm.sports.$invalid"> Please choose the sport </span>
+  <span style="color:red" class="help-inline" ng-show="submitted && frm.sports.$error.required">Please choose the sport </span>
 </div>
 </div>
 <ul class="pager">
-<li ng-click = "save()"><a href="#!/about">Next</a></li>
+  <button class="btn btn-success" type="submit" ng-click="submitted=true">Save</button>
+  <a href="#!/about" class="btn btn-primary pull-right" role="button" ng-click = "save()" ng-if="frm.$valid">Next</a>
 </ul>
+
 </form>
 </div>

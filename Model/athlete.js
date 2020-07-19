@@ -19,8 +19,8 @@ var athleteSchema = new Schema({
         team : { type: String,
                 required: true},
         gender : {type: String,
-                  enum: ['male', 'female', 'prefer_not_to_say'],
-                      required: true},
+                  enum: ['Male', 'Female', 'Prefer not to say'],
+                required: true},
         sports : { type: String,
                     enum : ["Golf",
                       "Tennis",
@@ -77,9 +77,9 @@ var athleteSchema = new Schema({
     interests : { type: String,
                   required: true},
     charities : { type: String,
-                  required: true},
+                  required: false},
     pets : { type: String,
-                  required: true},
+                  required: false},
     drinks_alcohol : { type: String,
                   enum : ['yes', 'no'],
                   required: true},
@@ -89,7 +89,8 @@ var athleteSchema = new Schema({
   },
 
   social_media_handles : { type: String,
-                enum : ['Facebook', 'Twitter', 'Instagram', 'Youtube', 'Twitch', 'Snapchat']},
+                enum : ['Facebook', 'Twitter', 'Instagram', 'Youtube', 'Twitch', 'Snapchat'],
+              required: true}
 
 })
 
