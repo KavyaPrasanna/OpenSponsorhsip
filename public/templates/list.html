@@ -23,19 +23,19 @@
 
         <tr ng-repeat="item in athletes">
             <td>{{$index+1}}</td>
-            <td>{{item.basic_info.name | capitalize}}</td>
+            <td>{{item.basic_info.name | uppercase}}</td>
             <!-- <td>{{item.basic_info.dob}}</td> -->
-            <td>{{item.basic_info.gender | capitalize}}</td>
-            <td>{{item.basic_info.association | capitalize}}</td>
-            <td>{{item.basic_info.nationality | capitalize}}</td>
-            <td>{{item.basic_info.location | capitalize}}</td>
-            <td>{{item.basic_info.team | capitalize}}</td>
-            <td>{{item.about.interests | capitalize}}</td>
-            <td>{{item.about.charities | capitalize}}</td>
-            <td>{{item.about.pets | capitalize}}</td>
-            <td>{{item.about.drinks_alcohol | capitalize}}</td>
-            <td>{{item.about.married | capitalize}}</td>
-            <td>{{item.social_media_handles | capitalize}}</td>
+            <td>{{item.basic_info.gender | uppercase}}</td>
+            <td>{{item.basic_info.association | uppercase}}</td>
+            <td>{{item.basic_info.nationality | uppercase}}</td>
+            <td>{{item.basic_info.location | uppercase}}</td>
+            <td>{{item.basic_info.team | uppercase}}</td>
+            <td>{{item.about.interests | uppercase}}</td>
+            <td>{{item.about.charities | uppercase}}</td>
+            <td>{{item.about.pets | uppercase}}</td>
+            <td>{{item.about.drinks_alcohol | uppercase}}</td>
+            <td>{{item.about.married | uppercase}}</td>
+            <td>{{item.social_media_handles | uppercase}}</td>
         </tr>
         </tbody>
     </table>
