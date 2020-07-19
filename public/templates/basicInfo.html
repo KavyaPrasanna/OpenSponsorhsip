@@ -121,8 +121,13 @@
 </div>
 <ul class="pager">
   <button class="btn btn-success" type="submit" ng-click="submitted=true">Save</button>
-  <a href="#!/about" class="btn btn-primary pull-right" role="button" ng-click = "save()" ng-if="frm.$valid">Next</a>
 </ul>
+
+<div class="btn-toolbar pull-right" role="toolbar" aria-label="Toolbar with button groups">
+  <div class="btn-group mr-2" role="group" aria-label="Sec group">
+    <a href="#!/about" class="btn btn-primary pull-right" role="button" ng-click = "save()" ng-if="frm.$valid">Next</a>
+  </div>
+</div>
 
 </form>
 </div>
